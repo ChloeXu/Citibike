@@ -1,0 +1,11 @@
+###1.
+###python convert_to_text > ins.txt
+
+2.
+python topic_mapper.py < vine.txt | python topic_reducer.py
+
+3.
+python review_mapper.py < vine.txt | python review_reducer.py
+
+4. 
+python rating_mapper1.py < vine.txt | python rating_mapper2.py | python rating_reducer.py
