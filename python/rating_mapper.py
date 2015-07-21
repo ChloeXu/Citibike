@@ -4,8 +4,8 @@
 from __future__ import unicode_literals
 import re
 import sys
-from string import punctuation
 import nltk
+from string import punctuation
 
 
 stop_word = ['if','instagram','ig','doesn','app','so','of','need','use',
@@ -15,7 +15,7 @@ stop_word = ['if','instagram','ig','doesn','app','so','of','need','use',
             'keep','stop','as','as','few']
 count = 0
 
-for line in sys.stdin:    
+for line in sys.stdin:
     data = line.decode('utf8').split('|')
     topic = data[0]
     review = data[1]
@@ -25,7 +25,7 @@ for line in sys.stdin:
     if rating <= 2:
         count += 1
         r = re.compile(r'[{}]'.format(punctuation))
-        words = r.sub(' ', review)    
+        words = r.sub(' ', review)
         words = words.lower()
         words = nltk.word_tokenize(words)
         words = nltk.pos_tag(words)
